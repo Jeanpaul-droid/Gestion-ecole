@@ -1,187 +1,245 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard École XYZ</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    /* Sidebar style */
-    #sidebar {
-      min-width: 200px;
-      max-width: 200px;
-      background-color: #f8f9fa;
-      min-height: 100vh;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard École XYZ</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&display=swap">
 
-    /* Cards spacing */
-    .card {
-      margin-bottom: 20px;
-    }
+    <style>
+        /* Sidebar style */
+        #sidebar {
+            min-width: 200px;
+            max-width: 200px;
+            background-color: #f8f9fa;
+            min-height: 100vh;
+        }
 
-    /* Tables */
-    .table-container {
-      margin-top: 20px;
-    }
+        body {
+            font-family: 'Fira Code', monospace;
+        }
 
-    /* Responsive sidebar on small screens */
-    @media (max-width: 991px) {
-      #sidebar {
-        min-width: 100%;
-        max-width: 100%;
-        height: auto;
-      }
-    }
-  </style>
+
+        /* Cards spacing */
+        .card {
+            margin-bottom: 20px;
+        }
+
+        /* Tables */
+        .table-container {
+            margin-top: 20px;
+        }
+
+        /* Responsive sidebar on small screens */
+        @media (max-width: 991px) {
+            #sidebar {
+                min-width: 100%;
+                max-width: 100%;
+                height: auto;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-<!-- Header / Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-opacity-40 backdrop-blur sticky-top shadow-xl">
-  <div class="container-fluid">
-    <a class="navbar-brand fw-bold" href="#">Tableau De Bord </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
-      aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <!-- Header / Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-opacity-40 backdrop-blur sticky-top shadow-xl">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="#">Tableau De Bord </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-    <div class="collapse navbar-collapse" id="navbarContent">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item"><a class="nav-link active" href="#">Accueil</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Étudiants</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Cours</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Notes</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Enseignants</a></li>
-        <li class="nav-item"><a class="btn btn-danger rounded" href="#">Déconnexion</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<div class="container-fluid">
-  <div class="row">
-
-    <!-- Sidebar -->
-    <nav id="sidebar" class="col-lg-2 d-lg-block bg-light collapse d-lg-block">
-      <ul class="nav flex-column p-3">
-        <li class="nav-item mb-2"><a class="nav-link active" href="#">Dashboard</a></li>
-        <li class="nav-item mb-2"><a class="nav-link" href="#">Étudiants</a></li>
-        <li class="nav-item mb-2"><a class="nav-link" href="#">Enseignants</a></li>
-        <li class="nav-item mb-2"><a class="nav-link" href="#">Cours</a></li>
-        <li class="nav-item mb-2"><a class="nav-link" href="#">Notes</a></li>
-        <li class="nav-item mb-2"><a class="nav-link" href="#">Absences</a></li>
-      </ul>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link active" href="#">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Étudiants</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Cours</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Notes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Enseignants</a></li>
+                    <li class="nav-item"><a class="btn btn-danger rounded" href="#">Déconnexion</a></li>
+                </ul>
+            </div>
+        </div>
     </nav>
 
-    <!-- Main content -->
-    <main class="col-lg-10 ms-auto p-4">
+    <div class="container-fluid">
+        <div class="row">
 
-      <!-- Cards statistiques -->
-      <div class="row text-center bg-dark rounded-4 p-4 shadow-">
-        <div class="col-md-3">
-          <div class="card bg-info bg-opacity-10 border border-3 border-end-0 border-top-0 border-bottom-0 border-info text-white rounded-3">
-            <div class="card-body">
-              <h5 class="card-title">Étudiants</h5>
-              <p class="card-text fs-4 fw-bold">250</p>
-            </div>
-          </div>
+            <!-- Sidebar -->
+            <nav id="sidebar" class="col-lg-2 d-lg-block bg-light collapse d-lg-block">
+                <ul class="nav flex-column p-3">
+                    <li class="nav-item mb-2"><a class="nav-link active" href="#">Dashboard</a></li>
+                    <li class="nav-item mb-2"><a class="nav-link" href="#">Étudiants</a></li>
+                    <li class="nav-item mb-2"><a class="nav-link" href="#">Enseignants</a></li>
+                    <li class="nav-item mb-2"><a class="nav-link" href="#">Cours</a></li>
+                    <li class="nav-item mb-2"><a class="nav-link" href="#">Notes</a></li>
+                    <li class="nav-item mb-2"><a class="nav-link" href="#">Absences</a></li>
+                </ul>
+            </nav>
+
+            <!-- Main content -->
+            <main class="col-lg-10 ms-auto p-4">
+
+                <!-- Cards statistiques -->
+                <div class="row text-center bg-dark rounded-4 p-4 shadow-">
+                    <div class="col-md-3">
+                        <div
+                            class="card bg-info bg-opacity-10 border border-3 border-end-0 border-top-0 border-bottom-0 border-info text-white rounded-3">
+                            <div class="card-body">
+                                <h5 class="card-title">Étudiants</h5>
+                                <p class="card-text fs-4 fw-bold">250</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div
+                            class="card text-white bg-success bg-opacity-10 border border-3 border-success rounded-3 border-end-0 border-bottom-0 border-top-0">
+                            <div class="card-body">
+                                <h5 class="card-title">Enseignants</h5>
+                                <p class="card-text fs-4 fw-bold">20</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div
+                            class="card bg-warning bg-opacity-10  border border-3 rounded-3 border-warning border-top-0 border-bottom-0 border-end-0 text-white">
+                            <div class="card-body">
+                                <h5 class="card-title">Cours</h5>
+                                <p class="card-text fs-4 fw-bold">35</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div
+                            class="card bg-danger bg-opacity-10 border border-3 rounded-3 border-danger border-top-0 border-bottom-0 border-end-0 text-white">
+                            <div class="card-body">
+                                <h5 class="card-title">Absences</h5>
+                                <p class="card-text fs-4 fw-bold">12</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tables -->
+                <div class="table-container">
+
+                    <!-- Étudiants -->
+                    <h4 class="mt-4 bg-info bg-opacity-10 p-2 border-start border-5 border-info">Liste des étudiants
+                    </h4>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover text-center">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Matricule</th>
+                                    <th>Nom</th>
+                                    <th>Prénom</th>
+                                    <th>Filière</th>
+                                    <th>Niveau</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>ET001</td>
+                                    <td>Houenou</td>
+                                    <td>Harrisson</td>
+                                    <td class="m-2 badge rounded-pill text-bg-success">Informatique</td>
+                                    <td>L2</td>
+                                </tr>
+                                <tr>
+                                    <td>ET002</td>
+                                    <td>Codjia</td>
+                                    <td>Wilfried</td>
+                                    <td class="m-2 badge rounded-pill text-bg-danger">Réseaux</td>
+                                    <td>L3</td>
+                                </tr>
+                                <tr>
+                                    <td>ET003</td>
+                                    <td>Senouvo</td>
+                                    <td>Oxymel</td>
+                                    <td class="m-2 badge rounded-pill text-bg-info">Mathématiques</td>
+                                    <td>L1</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Notes -->
+                    <h4 class="mt-4 bg-success bg-opacity-10 p-2 border-start border-5 border-success">Dernières notes
+                    </h4>
+                    <div class="table-responsive">
+                        <table class="table  table-hover text-center">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Étudiant</th>
+                                    <th>Cours</th>
+                                    <th>Note</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Houenou Harrisson</td>
+                                    <td class="m-2 badge rounded-pill text-bg-success">Algorithme</td>
+                                    <td>15</td>
+                                </tr>
+                                <tr>
+                                    <td>Codjia Wilfried</td>
+                                    <td class="m-2 badge rounded-pill text-bg-warning">Réseau</td>
+                                    <td>18</td>
+                                </tr>
+                                <tr>
+                                    <td>Senouvo Oxymel</td>
+                                    <td class=" m-2 badge rounded-pill text-bg-danger">Analyse</td>
+                                    <td>12</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Absences -->
+                    <h4 class="mt-4 bg-primary bg-opacity-10 p-2 border-start border-5 border-primary">Absences récentes
+                    </h4>
+                    <div class="table-responsive">
+                        <table class="table table-hover text-center">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Étudiant</th>
+                                    <th>Date</th>
+                                    <th>Cours</th>
+                                    <th>Justifiée</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Houenou Harrisson</td>
+                                    <td>12/02/2026</td>
+                                    <td class="m-2 badge rounded-pill text-bg-info">Mathématiques</td>
+                                    <td>Non</td>
+                                </tr>
+                                <tr>
+                                    <td>Codjia Wilfried</td>
+                                    <td>11/02/2026</td>
+                                    <td class="m-2 badge rounded-pill text-bg-primary">Réseau</td>
+                                    <td>Oui</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </main>
+
         </div>
-        <div class="col-md-3">
-          <div class="card text-white bg-success bg-opacity-10 border border-3 border-success rounded-3 border-end-0 border-bottom-0 border-top-0">
-            <div class="card-body">
-              <h5 class="card-title">Enseignants</h5>
-              <p class="card-text fs-4 fw-bold">20</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card bg-warning bg-opacity-10  border border-3 rounded-3 border-warning border-top-0 border-bottom-0 border-end-0 text-white">
-            <div class="card-body">
-              <h5 class="card-title">Cours</h5>
-              <p class="card-text fs-4 fw-bold">35</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card bg-danger bg-opacity-10 border border-3 rounded-3 border-danger border-top-0 border-bottom-0 border-end-0 text-white">
-            <div class="card-body">
-              <h5 class="card-title">Absences</h5>
-              <p class="card-text fs-4 fw-bold">12</p>
-            </div>
-          </div>
-        </div>
-      </div>
+    </div>
 
-      <!-- Tables -->
-      <div class="table-container">
-
-        <!-- Étudiants -->
-        <h4 class="mt-4 bg-info bg-opacity-10 p-2 border-start border-5 border-info">Liste des étudiants</h4>
-        <div class="table-responsive">
-          <table class="table table-striped table-hover text-center">
-            <thead class="table-dark">
-              <tr>
-                <th>Matricule</th>
-                <th>Nom</th>
-                <th>Prénom</th>
-                <th>Filière</th>
-                <th>Niveau</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td>ET001</td><td>Houenou</td><td>Harrisson</td><td class="m-2 badge rounded-pill text-bg-success">Informatique</td><td>L2</td></tr>
-              <tr><td>ET002</td><td>Codjia</td><td>Wilfried</td><td class="m-2 badge rounded-pill text-bg-danger">Réseaux</td><td>L3</td></tr>
-              <tr><td>ET003</td><td>Senouvo</td><td>Oxymel</td><td class="m-2 badge rounded-pill text-bg-info">Mathématiques</td><td>L1</td></tr>
-            </tbody>
-          </table>
-        </div>
-
-        <!-- Notes -->
-        <h4 class="mt-4 bg-success bg-opacity-10 p-2 border-start border-5 border-success">Dernières notes</h4>
-        <div class="table-responsive">
-          <table class="table  table-hover text-center">
-            <thead class="table-dark">
-              <tr>
-                <th>Étudiant</th>
-                <th>Cours</th>
-                <th>Note</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td>Houenou Harrisson</td><td class="m-2 badge rounded-pill text-bg-success">Algorithme</td><td>15</td></tr>
-              <tr><td>Codjia Wilfried</td><td class="m-2 badge rounded-pill text-bg-warning" >Réseau</td><td>18</td></tr>
-              <tr><td>Senouvo Oxymel</td><td class=" m-2 badge rounded-pill text-bg-danger">Analyse</td><td>12</td></tr>
-            </tbody>
-          </table>
-        </div>
-
-        <!-- Absences -->
-        <h4 class="mt-4 bg-primary bg-opacity-10 p-2 border-start border-5 border-primary">Absences récentes</h4>
-        <div class="table-responsive">
-          <table class="table table-hover text-center">
-            <thead class="table-dark">
-              <tr>
-                <th>Étudiant</th>
-                <th>Date</th>
-                <th>Cours</th>
-                <th>Justifiée</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td>Houenou Harrisson</td><td>12/02/2026</td><td class="m-2 badge rounded-pill text-bg-info">Mathématiques</td><td>Non</td></tr>
-              <tr><td>Codjia Wilfried</td><td>11/02/2026</td><td class="m-2 badge rounded-pill text-bg-primary">Réseau</td><td>Oui</td></tr>
-            </tbody>
-          </table>
-        </div>
-
-      </div>
-    </main>
-
-  </div>
-</div>
-
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
